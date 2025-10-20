@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+     <style>
+        body { font-family: sans-serif; text-align: center; max-width: 500px; margin: 50px auto; }
+        a { color: #ff73f3ab; }
+    </style>
+</head>
+<body>
+    <h1>Welcome, {{ full_name }}! 👋</h1>
+    
+    <p>To log out, please <a href="{{ url_for('logout') }}">click here</a>.</p>
+    
+</body>
+</html>
