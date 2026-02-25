@@ -1,4 +1,4 @@
-# We need to import Flask tools along with our other libraries
+# import
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 import psycopg2
 import psycopg2.extras
@@ -11,11 +11,11 @@ app = Flask(__name__)
 
 app.secret_key = 'Makisa-10-Secret'
 
-# --- DATABASE SETUP ---
+# DATABASE SETUP
 DB_CONFIG = {
     "dbname": "my_app",
     "user": "postgres",
-    "password": "Makisa@10",
+    "password": "pass",
     "host": "localhost",
     "port": "5432"
 }
@@ -23,9 +23,9 @@ DB_CONFIG = {
 def connect_db():
     return psycopg2.connect(**DB_CONFIG)
 
-# --- WEB ROUTES ---
+# WEB ROUTES
 
-# This is the main page (login page)
+#  main page (login page)
 @app.route('/', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -104,6 +104,5 @@ def register():
 
     return render_template('register.html')
 
-# This makes the app run and should be at the VERY END
 if __name__ == '__main__':
     app.run(debug=True)
